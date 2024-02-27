@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+<!-- This is the page that will show the user pending friend requests. If the user clicks on the friend request page it will bring it to here.-->
+{% block title %}
+    Friend Requests
+{% endblock %}
+
+{% block main %}
+
+    <div class="sec1">
+        <!-- This is the code for the text that describes the request. It uses the sec1 class to contain the text. -->
+        <!-- The sec1 classes contains the font of the text, color of text, container box, box color etc... -->
+        <h2>
+            Your Current Friend Requests
+        </h2>
+        <p>
+            <font size = 3>
+                Below is list of your friend requests. Accept or Decline by typing in the field below.
+            </font>
+        </p>
+    </div>
+
+    <br>
+        <!-- This form will take the username in a text field that the user wants to accept or decline. It has the accept and decline button. -->
+        <form action="/friendrequest" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit"name="submitbutton" value="accept">Accept</button>
+            <button class="btn btn-primary" type="submit" name="submitbutton" value="decline">Decline</button>
+        </form>
+    </br>
+
+    <!-- This display will contain all the pending friend requests of the current user. -->
+    <main class="container py-5 text-center">
+        <table class="table table-striped" style="background-color:#EEEBD3;">
+            <thead style="background-color:#9DCCA7;">
+                <tr>
+                    <th style="color:blue;">Pending Friend Requests(Username)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for n in pending %}
+                    <tr>
+                        <td>{{ n.user1 }}</td>
+                {% endfor %}
+
+                    </tr>
+            </tbody>
+        </table>
+{% endblock %}

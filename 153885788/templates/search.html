@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+<!-- This is the page if the user wants to search for a user. -->
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <div class="sec1">
+        <!-- This is the code for the text that describes the search. It uses the sec1 class to contain the text. -->
+        <!-- The sec1 classes contains the font of the text, color of text, container box, box color etc... -->
+        <h2>
+            Search Username
+        </h2>
+        <p>
+            <font size = 3>
+                If you want to search a username, please type in the search bar below.
+            </font>
+        </p>
+    </div>
+
+    <br>
+
+    </br>
+
+    <!-- This form will take the username that the current user wants to search and has the submit button. -->
+    <form action="/search" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

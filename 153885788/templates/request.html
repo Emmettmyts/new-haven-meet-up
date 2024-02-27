@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+<!-- This is the page that will be used if you want to request a friend. -->
+{% block title %}
+    Request a Friend
+{% endblock %}
+
+{% block main %}
+    <div class="sec1">
+        <!-- This is the code for the text that describes the meal request a friend. It uses the sec1 class to contain the text. -->
+        <!-- The sec1 classes contains the font of the text, color of text, container box, box color etc... -->
+        <h2>
+            Friend Request
+        </h2>
+        <p>
+            <font size = 3>
+                Below is a friend request button. Type the username you want to send a friend request.
+                It will send the friend request.
+            </font>
+        </p>
+    </div>
+
+    <br>
+
+    </br>
+
+    <!-- This form will take the username that the user wants to request. -->
+    <form action="/request" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Request</button>
+    </form>
+{% endblock %}

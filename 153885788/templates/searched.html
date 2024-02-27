@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+<!-- This page is what will display once the user searches a valid username. -->
+{% block title %}
+    User Searched
+{% endblock %}
+
+{% block main %}
+
+    <!-- This table will show the information such as the name, email, phone, bio, age of the username that the user typed in the search page. -->
+    <main class="container py-5 text-center">
+        <table class="table table-striped" style="background-color:#EEEBD3;">
+            <thead style="background-color:#9DCCA7;">
+                <tr>
+                    <th style="color:blue;">Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Age</th>
+                    <th>Bio</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for n in userinfo %}
+                    <tr>
+                        <td>{{ n.username }}</td>
+                        <td>{{ n.name }}</td>
+                        <td>{{ n.email }}</td>
+                        <td>{{ n.phone }}</td>
+                        <td>{{ n.age }}</td>
+                        <td>{{ n.bio }}</td>
+                {% endfor %}
+
+                    </tr>
+            </tbody>
+        </table>
+{% endblock %}

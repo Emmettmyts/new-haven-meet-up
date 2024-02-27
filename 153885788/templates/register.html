@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+<!-- This is the register page. When the user needs to register, they will use this page. -->
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <!-- This form will take username, password and confirmation for the user. It will register this new user. -->
+    <form action="/register" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

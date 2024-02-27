@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+<!-- This is the page for the apology page. This will only be used for the login and register errors, when the user forgot to type a username, etc. -->
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <!-- This below is the picture of the cat used for the apology message -->
+    <!-- https://memegen.link/ -->
+    <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/CsCgN7Ll.png&width=400" title="{{ top }}">
+{% endblock %}
+

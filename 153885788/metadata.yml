@@ -1,0 +1,12 @@
+---
+:id: 153885788
+:submitters:
+- :name: Emmett Seto
+  :email: emmett.seto@yale.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2022-12-12 04:01:53.701648000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2022-12-11 20:01:53.701648000 Z
+:status: processed
+:score: 17.0

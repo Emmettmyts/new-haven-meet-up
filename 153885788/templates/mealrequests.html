@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+<!-- This is the page for the meal requests or pending meal requests. -->
+{% block title %}
+    Meal Requests
+{% endblock %}
+
+{% block main %}
+
+    <div class="sec1">
+        <!-- This is the code for the text that describes the meal requests. It uses the sec1 class to contain the text. -->
+        <!-- The sec1 classes contains the font of the text, color of text, container box, box color etc... -->
+        <h2>
+            Meal Requests
+        </h2>
+        <p>
+            <font size = 3>
+                Below is a list of your meal requests. If you want to accept or decline, please type in the field below.
+            </font>
+        </p>
+    </div>
+
+    <br>
+        <form action="/mealrequests" method="post" enctype="multipart/form-data">
+            <!-- This form will take the id of the meal that the user wants to accept or decline. It also has accept and decline button. -->
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="mealid" name="mealid" placeholder="Meal id" input type="number" required>
+            </div>
+            <button class="btn btn-primary" type="submit"name="submitbutton" value="accept">Accept</button>
+            <button class="btn btn-primary" type="submit" name="submitbutton" value="decline">Decline</button>
+        </form>
+    </br>
+
+    <!-- This is the table that will show the pending meal requests. It shows the information of the meal requests such as date, time restaurant, notes, etc.. -->
+    <main class="container py-5 text-center">
+        <table class="table table-striped" style="background-color:#EEEBD3;">
+            <thead style="background-color:#9DCCA7;">
+                <tr>
+                    <th style="color:blue;">Pending Meal Requests (Username)</th>
+                    <th>Meal Id</th>
+                    <th>Meal Type</th>
+                    <th>Time </th>
+                    <th>Date</th>
+                    <th>Restaurant </th>
+                    <th>Notes </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for n in pending %}
+                    <tr>
+                        <td>{{ n.user1 }}</td>
+                        <td>{{ n.id }}</td>
+                        <td>{{ n.type }}</td>
+                        <td>{{ n.time }}</td>
+                        <td>{{ n.date }}</td>
+                        <td>{{ n.restaurant }}</td>
+                        <td>{{ n.notes }}</td>
+                {% endfor %}
+
+                    </tr>
+            </tbody>
+        </table>
+{% endblock %}

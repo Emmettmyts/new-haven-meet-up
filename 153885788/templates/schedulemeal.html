@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+<!-- This page is used for schedule a meal. If you want to schedule a meal they will use this tab. -->
+{% block title %}
+    Schedule Meal
+{% endblock %}
+
+{% block main %}
+    <div class="sec1">
+        <!-- This is the code for the text that describes the schedule a meal. It uses the sec1 class to contain the text. -->
+        <!-- The sec1 classes contains the font of the text, color of text, container box, box color etc... -->
+        <h2>
+            Schedule A Meal
+        </h2>
+        <p>
+            <font size = 3>
+                If you want to send a meal request to someone, please schedule below. All forms are required besides the notes field.
+            </font>
+        </p>
+    </div>
+
+    <br>
+    </br>
+
+    <!-- This form will allow the user to schedule a meal with the user. It has fields such as meal type, time, date, restaurant, notes etc.. for the user to type to. -->
+    <!-- All of these fields are required except the notes section. -->
+    <form action="/schedulemeal" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username to send to" type="text">
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="type">
+                <option disabled="" selected="">Meal Type</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <input type="time" id="time" name="time" min="09:00" max="18:00" required>
+            <small>Time</small>
+        </div>
+
+        <div class="mb-3">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="restaurant" name="restaurant" placeholder="Restaurant Name" type="text">
+        </div>
+
+        <div class="mb-3">
+            <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Request</button>
+    </form>
+{% endblock %}

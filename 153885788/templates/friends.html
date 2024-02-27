@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+<!-- This will show the user current friends that the user has. -->
+{% block title %}
+    Friends
+{% endblock %}
+
+{% block main %}
+
+<!-- This will show the current friends that the user has. -->
+
+    <div class="sec1">
+        <!-- This is the code for the text that describes the friends. It uses the sec1 class to contain the text. -->
+        <!-- The sec1 classes contains the font of the text, color of text, container box, box color etc... -->
+        <h2>
+            Your Current Friends
+        </h2>
+        <p>
+            <font size = 3>
+                Below is a list of usernames of all your current friends.
+            </font>
+        </p>
+    </div>
+
+    <!-- This table will display the username of the current friends that the user has. -->
+    <main class="container py-5 text-center">
+        <table class="table table-striped" style="background-color:#EEEBD3;">
+            <thead style="background-color:#9DCCA7;">
+                <tr>
+                    <th style="color:blue;">Friend(Username)</th>
+                </tr>
+            </thead>
+
+            <!-- This for loop will loop through the list of the friends user. -->
+            <tbody>
+                {% for n in range(0, length + 1) %}
+                    <tr>
+                        <td>{{ fuser[n] }}</td>
+                {% endfor %}
+                    </tr>
+            </tbody>
+        </table>
+{% endblock %}
